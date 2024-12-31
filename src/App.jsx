@@ -37,7 +37,7 @@ const App = () => {
   const getForecast = async () => {
     try {
       const response = await axios.get(
-        `http://api.weatherapi.com/v1/forecast.json?key=${forecastKey}&q=Lahore&days=7&aqi=no&alerts=no`
+        `https://api.weatherapi.com/v1/forecast.json?key=${forecastKey}&q=Lahore&days=7&aqi=no&alerts=no`
       );
       setForecast(response.data.forecast.forecastday);
       setError(null);

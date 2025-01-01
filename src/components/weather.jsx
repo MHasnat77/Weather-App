@@ -40,7 +40,7 @@ const Weather = ({ weather, forecast }) => {
 
         {/* Weather Details */}
         <div className="w-[80%] mt-[10vh]">
-          <h4 className="text-[3.5vw] bg-clip-text text-transparent bg-gradient-to-r from-[#87CEEB] to-[#E0FFFF]  w-[13vw] justify-center items-center mx-[30vw] drop-shadow-xl outline-4">
+          <h4 className="text-[3.5vw] bg-clip-text text-transparent bg-gradient-to-r from-[#87CEEB] to-[#E0FFFF]  w-[20vw] justify-center items-center mx-[30vw] drop-shadow-xl outline-4">
             {weather.weather?.[0]?.description.toLocaleUpperCase()}
           </h4>
           <h4 className="text-[1.5vw] bg-clip-text text-transparent bg-gradient-to-r from-[#FFFFFF] to-[#B0C4DE] flex ml-[13vw] mt-[3vw] drop-shadow-lg font-medium">

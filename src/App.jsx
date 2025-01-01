@@ -11,6 +11,7 @@ import snow from "./assets/snow.jpg";
 import thunderStorm from "./assets/thunderstorm.jpg";
 import fewClouds from "./assets/fewclouds.jpg";
 import smoke from "./assets/smoke.jpg";
+import ScatteredClouds from "./assets/ScatteredClouds.jpg";
 import Weather from "./components/weather";
 
 const App = () => {
@@ -79,13 +80,16 @@ const App = () => {
         mist: mist,
         "shower rain": showerRain,
         smoke: smoke,
+        "scattered clouds": ScatteredClouds,
       };
 
       const matchingImage = Object.keys(weatherImages).find((key) =>
         description.includes(key)
       );
 
-      setBackgroundImage(weatherImages[matchingImage]);
+      setBackgroundImage(
+        weatherImages[matchingImage] || defaultBackgroundImage
+      );
     }
   }, [weather]);
 

@@ -87,9 +87,7 @@ const App = () => {
         description.includes(key)
       );
 
-      setBackgroundImage(
-        weatherImages[matchingImage] || defaultBackgroundImage
-      );
+      setBackgroundImage(weatherImages[matchingImage]);
     }
   }, [weather]);
 

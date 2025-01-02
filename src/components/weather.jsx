@@ -47,7 +47,7 @@ const Weather = ({ weather, forecast }) => {
             {weather.sys?.country}, <Date />
           </h4>
 
-          <div className="flex ml-[13vw] mt-[0.3vw] w-[40vw] h-[15vh] mb-[0.5vh] bg-[rgba(0,0,0,0.1)]">
+          <div className="flex ml-[13vw] mt-[0.3vw] w-[40vw] h-[15vh] mb-[0.5vh] bg-[rgba(0,0,0,0.1)] rounded-md shadow-xl">
             <p className="text-[3vw] border-r-[0.208vw] px-[0.3vw] mx-[0.35vw] italic">
               {Math.round(weather.main?.temp)}°
             </p>

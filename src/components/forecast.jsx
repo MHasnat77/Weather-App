@@ -6,7 +6,7 @@ const Forecast = ({ forecast }) => {
       {forecast.map((day) => (
         <div
           key={day.date}
-          className=" bg-[rgba(0,0,0,0.1)] text-white rounded-md p-[0.41vw] shadow-lg"
+          className=" bg-[rgba(0,0,0,0.1)] text-white rounded-md p-[0.41vw] shadow-lg hover:bg-[rgba(0,0,0,0.4)] transition-all  ease-in-out duration-100"
         >
           <h3 className="text-center text-[1.4vw] font-bold ">
             {new Date(day.date).toLocaleDateString("en-US", {

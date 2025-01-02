@@ -12,6 +12,7 @@ import thunderStorm from "./assets/thunderstorm.jpg";
 import fewClouds from "./assets/fewclouds.jpg";
 import smoke from "./assets/smoke.jpg";
 import ScatteredClouds from "./assets/ScatteredClouds.jpg";
+import Fog from "./assets/Fog.jpg";
 import Weather from "./components/weather";
 
 const App = () => {
@@ -81,6 +82,7 @@ const App = () => {
         "shower rain": showerRain,
         smoke: smoke,
         "scattered clouds": ScatteredClouds,
+        fog: Fog,
       };
 
       const matchingImage = Object.keys(weatherImages).find((key) =>

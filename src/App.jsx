@@ -14,8 +14,6 @@ import smoke from "./assets/smoke.jpg";
 import ScatteredClouds from "./assets/ScatteredClouds.jpg";
 import Fog from "./assets/Fog.jpg";
 import Weather from "./components/weather";
-import { logEvent } from "firebase/analytics";
-import { analytics } from "./firebase";
 
 const App = () => {
   const [weather, setWeather] = useState(null);

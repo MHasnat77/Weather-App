@@ -14,6 +14,8 @@ import smoke from "./assets/smoke.jpg";
 import ScatteredClouds from "./assets/ScatteredClouds.jpg";
 import Fog from "./assets/Fog.jpg";
 import Weather from "./components/weather";
+import { logEvent } from "firebase/analytics";
+import { analytics } from "./firebase";
 
 const App = () => {
   const [weather, setWeather] = useState(null);
@@ -92,7 +94,13 @@ const App = () => {
       setBackgroundImage(weatherImages[matchingImage]);
     }
   }, [weather]);
-
+  const handleButtonClick = () => {
+    // Log custom event
+    logEvent(analytics, "button_click", {
+      button_name: "Check Weather",
+    });
+    console.log("Button click event logged!");
+  };
   return (
     <div
       className="app bg-cover bg-no-repeat  min-h-screen w-full m-0 p-0 text-white"
@@ -100,6 +108,7 @@ const App = () => {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
+      <button onClick={handleButtonClick}>Check Weather</button>
       {error && <div className="error">{error}</div>}
       {weather && <Weather weather={weather} forecast={forecast} />}
     </div>

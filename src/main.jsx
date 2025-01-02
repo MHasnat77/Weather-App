@@ -7,7 +7,9 @@ import { analytics } from "./firebase";
 
 // Example: Log a page view
 logEvent(analytics, "page_view", { page_path: "/" });
-
+logEvent(analytics, "weather_checked", {
+  city_name: "lahora",
+});
 console.log("Analytics initialized:", analytics);
 createRoot(document.getElementById("root")).render(
   <StrictMode>

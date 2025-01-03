@@ -100,7 +100,6 @@ const App = () => {
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      <button onClick={handleButtonClick}>Check Weather</button>
       {error && <div className="error">{error}</div>}
       {weather && <Weather weather={weather} forecast={forecast} />}
     </div>

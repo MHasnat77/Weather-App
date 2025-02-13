@@ -2,7 +2,7 @@ import React from "react";
 
 const Forecast = ({ forecast }) => {
   return (
-    <div className="forecast grid grid-cols-3   gap-[9.4vw] p-[2.83vw]   mt-[10vh] text-center ">
+    <div className="forecast grid grid-cols-3   gap-[9.4vw] p-[0.83vw]   mt-[10vh] text-center ">
       {forecast.map((day) => (
         <div
           key={day.date}

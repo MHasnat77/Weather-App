@@ -7,7 +7,7 @@ const Weather = ({ weather, forecast }) => {
     <>
       {/*Weather Side Bar */}
       <div className="flex">
-        <div className=" border-[0.5px] rounded-r-md border-[rgba(0,0,0,0.1)] w-[19.531vw] h-screen relative z-40 bg-[rgba(0,0,0,0.1)]">
+        <div className=" border-[0.5px] rounded-r-md border-[rgba(0,0,0,0.1)] w-[19.531vw] h-screen relative z-40 bg-[rgba(0,0,0,0.1)] pb-[2vh]">
           <div className="text-center">
             <div className=" flex mt-[4vh] justify-center mb-[4vh] mx-[1vw] text-white ">
               <i className="fas fa-thermometer-half text-white-500 mt-[9px] text-[1.563vw] mx-[0.5vw] "></i>

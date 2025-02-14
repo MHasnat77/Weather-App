@@ -21,6 +21,7 @@ const App = () => {
   const [forecast, setForecast] = useState([]);
   const [error, setError] = useState(null);
   const [backgroundImage, setBackgroundImage] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
 
   const weatherKey = "0f481da472aee275b27033b57ae748ed";
   const forecastKey = "18f37daa212046ea94262709242412";
@@ -34,6 +35,8 @@ const App = () => {
       setError(null);
     } catch (err) {
       setError("Failed to fetch data, Please try again.");
+    } finally {
+      setIsLoading(false);
     }
   };
 
@@ -59,10 +62,12 @@ const App = () => {
         },
         () => {
           setError("Please allow location access to fetch weather data.");
+          setIsLoading(false);
         }
       );
     } else {
       setError("Couldn't get the user location.");
+      setIsLoading(false);
     }
     getForecast();
   }, []);
@@ -97,13 +102,34 @@ const App = () => {
 
   return (
     <div
-      className="app bg-cover bg-no-repeat  min-h-screen w-full m-0 p-0 text-white"
+      className="app bg-cover bg-no-repeat min-h-screen w-full m-0 p-0 text-white"
       style={{
         backgroundImage: `url(${backgroundImage})`,
       }}
     >
-      {error && <div className="error">{error}</div>}
-      {weather && <Weather weather={weather} forecast={forecast} />}
+      {isLoading ? (
+        <div className="flex justify-center items-center min-h-screen bg-black bg-opacity-50">
+          <div className="text-center">
+            {/* Tailwind Spinner */}
+            <div
+              className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              role="status"
+            >
+              <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
+                Loading...
+              </span>
+            </div>
+            <p className="mt-3 text-lg text-white">
+              Please allow GPS access to see the current weather.
+            </p>
+          </div>
+        </div>
+      ) : (
+        <>
+          {error && <div className="error">{error}</div>}
+          {weather && <Weather weather={weather} forecast={forecast} />}
+        </>
+      )}
     </div>
   );
 };

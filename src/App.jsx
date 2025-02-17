@@ -108,18 +108,20 @@ const App = () => {
       }}
     >
       {isLoading ? (
-        <div className="flex justify-center items-center min-h-screen bg-black bg-opacity-50">
+        <div className="flex justify-center items-center min-h-screen bg-gradient-to-r from-black via-gray-900 to-black">
           <div className="text-center">
-            {/* Enhanced Tailwind Spinner */}
+            {/* Enhanced Tailwind Spinner with Glow */}
             <div
-              className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-transparent border-t-[#3B82F6] border-r-[#3B82F6] border-b-[#3B82F6] border-l-[#3B82F6] bg-gradient-to-r from-[#3B82F6] to-[#9333EA] align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
+              className="inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-transparent border-t-[#3B82F6] border-r-[#3B82F6] border-b-[#3B82F6] border-l-[#3B82F6] bg-gradient-to-r from-[#3B82F6] to-[#9333EA] align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] shadow-lg shadow-[#3B82F6]/50"
               role="status"
             >
               <span className="!absolute !-m-px !h-px !w-px !overflow-hidden !whitespace-nowrap !border-0 !p-0 ![clip:rect(0,0,0,0)]">
                 Loading...
               </span>
             </div>
-            <p className="mt-4 text-lg text-white font-medium">
+
+            {/* Glowing Text with Tailwind */}
+            <p className="mt-4 text-lg text-white font-medium animate-pulse bg-gradient-to-r from-[#3B82F6] to-[#9333EA] bg-clip-text text-transparent">
               Please allow GPS access to see the current weather.
             </p>
           </div>
